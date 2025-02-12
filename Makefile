@@ -5,28 +5,21 @@ MOCKGEN?=mockgen
 
 .PHONY: all
 all: \
-  net/http/mock_http/http.go \
-  net/http/mock_http/client.go \
-  net/http/mock_http/client_request.go \
-  net/http/mock_http/client_response.go \
-  net/http/mock_http/server.go
+  io/mock_io/all.go \
+  net/http/mock_http/all.go
 
 .PHONY: mockgen
 mockgen: 
 	$(GO) install go.uber.org/mock/mockgen@latest
 
-net/http/mock_http/http.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http HTTP
+# Package io:
 
-net/http/mock_http/client.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http Client
+io/mock_io/all.go:
+	$(MOCKGEN) -destination $@ io ByteScanner,ByteWriter,Closer,ReadCloser,ReadSeekCloser,ReadSeeker,ReadWriteCloser,ReadWriteSeeker,ReadWriter,Reader,ReaderAt,ReaderFrom,RuneReader,RuneScanner,Seeker,StringWriter,WriteCloser,WriteSeeker,Writer,WriterAt,WriterTo
 
-net/http/mock_http/client_request.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http ClientRequest
+# Package github.com/pdutton/net/http:
 
-net/http/mock_http/client_response.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http ClientResponse
+net/http/mock_http/all.go:
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http HTTP,Client,ClientRequest,ClientResponse,Server
 
-net/http/mock_http/server.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http Server
 

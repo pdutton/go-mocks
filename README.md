@@ -1,2 +1,2 @@
 # go-mocks
-Mocks for interfaces found in go-interfaces
+Mocks for standard go interfaces and those found in go-interfaces.
