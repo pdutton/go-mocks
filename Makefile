@@ -36,6 +36,6 @@ net/http/server/mock_server/all.go:
 
 .PHONY: os/mock_os/all.go
 os/mock_os/all.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/os File,OS,Process,Root
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/os File,FileInfo,OS,Process,Root
 
 
