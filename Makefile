@@ -6,7 +6,8 @@ MOCKGEN?=mockgen
 .PHONY: all
 all: \
   io/mock_io/all.go \
-  net/http/mock_http/all.go
+  net/http/client/mock_client/all.go \
+  net/http/server/mock_server/all.go
 
 .PHONY: mockgen
 mockgen: 
@@ -18,10 +19,16 @@ mockgen:
 io/mock_io/all.go:
 	$(MOCKGEN) -destination $@ io ByteScanner,ByteWriter,Closer,ReadCloser,ReadSeekCloser,ReadSeeker,ReadWriteCloser,ReadWriteSeeker,ReadWriter,Reader,ReaderAt,ReaderFrom,RuneReader,RuneScanner,Seeker,StringWriter,WriteCloser,WriteSeeker,Writer,WriterAt,WriterTo
 
-# Package github.com/pdutton/net/http:
+# Package github.com/pdutton/net/http/client:
 
-.PHONY: net/http/mock_http/all.go
-net/http/mock_http/all.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http HTTP,Client,ClientRequest,ClientResponse,Server
+.PHONY: net/http/client/mock_client/all.go
+net/http/client/mock_client/all.go:
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http/client HTTP,Client,Request,Response
+
+# Package github.com/pdutton/net/http/server:
+
+.PHONY: net/http/server/mock_server/all.go
+net/http/server/mock_server/all.go:
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http/server HTTP,Server
 
 
