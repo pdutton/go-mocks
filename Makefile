@@ -7,7 +7,8 @@ MOCKGEN?=mockgen
 all: \
   io/mock_io/all.go \
   net/http/client/mock_client/all.go \
-  net/http/server/mock_server/all.go
+  net/http/server/mock_server/all.go \
+  os/mock_os/all.go
 
 .PHONY: mockgen
 mockgen: 
@@ -30,5 +31,11 @@ net/http/client/mock_client/all.go:
 .PHONY: net/http/server/mock_server/all.go
 net/http/server/mock_server/all.go:
 	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http/server HTTP,Server
+
+# Package github.com/pdutton/os:
+
+.PHONY: os/mock_os/all.go
+os/mock_os/all.go:
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/os File,OS,Process,Root
 
 
