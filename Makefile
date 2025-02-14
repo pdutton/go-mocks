@@ -24,13 +24,13 @@ io/mock_io/all.go:
 
 .PHONY: net/http/client/mock_client/all.go
 net/http/client/mock_client/all.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http/client HTTP,Client,Request,Response
+	$(MOCKGEN) -destination $@ -package mock_http github.com/pdutton/go-interfaces/net/http/client HTTP,Client,Request,Response
 
 # Package github.com/pdutton/net/http/server:
 
 .PHONY: net/http/server/mock_server/all.go
 net/http/server/mock_server/all.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/net/http/server HTTP,Server
+	$(MOCKGEN) -destination $@ -package mock_http github.com/pdutton/go-interfaces/net/http/server HTTP,Server
 
 # Package github.com/pdutton/os:
 
