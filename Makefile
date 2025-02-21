@@ -8,7 +8,8 @@ all: \
   io/mock_io/all.go \
   net/http/client/mock_client/all.go \
   net/http/server/mock_server/all.go \
-  os/mock_os/all.go
+  os/mock_os/all.go \
+  sync/mock_sync/all.go
 
 .PHONY: mockgen
 mockgen: 
@@ -37,5 +38,9 @@ net/http/server/mock_server/all.go:
 .PHONY: os/mock_os/all.go
 os/mock_os/all.go:
 	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/os File,FileInfo,OS,Process,Root
+
+.PHONY: sync/mock_sync/all.go
+sync/mock_sync/all.go:
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/sync Cond,Locker,Map,Mutex,Once,Pool,RWMutex,WaitGroup
 
 

@@ -13,11 +13,11 @@ import (
 	bufio "bufio"
 	tls "crypto/tls"
 	io "io"
-	http "net/http"
+	http0 "net/http"
 	url "net/url"
 	reflect "reflect"
 
-	client "github.com/pdutton/go-interfaces/net/http/client"
+	http "github.com/pdutton/go-interfaces/net/http/client"
 	gomock "go.uber.org/mock/gomock"
 )
 
@@ -60,10 +60,10 @@ func (mr *MockHTTPMockRecorder) CanonicalHeaderKey(arg0 any) *gomock.Call {
 }
 
 // Get mocks base method.
-func (m *MockHTTP) Get(arg0 string) (client.Response, error) {
+func (m *MockHTTP) Get(arg0 string) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Get", arg0)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -75,10 +75,10 @@ func (mr *MockHTTPMockRecorder) Get(arg0 any) *gomock.Call {
 }
 
 // Head mocks base method.
-func (m *MockHTTP) Head(arg0 string) (client.Response, error) {
+func (m *MockHTTP) Head(arg0 string) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Head", arg0)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -90,10 +90,10 @@ func (mr *MockHTTPMockRecorder) Head(arg0 any) *gomock.Call {
 }
 
 // Post mocks base method.
-func (m *MockHTTP) Post(arg0, arg1 string, arg2 io.Reader) (client.Response, error) {
+func (m *MockHTTP) Post(arg0, arg1 string, arg2 io.Reader) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Post", arg0, arg1, arg2)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -105,10 +105,10 @@ func (mr *MockHTTPMockRecorder) Post(arg0, arg1, arg2 any) *gomock.Call {
 }
 
 // PostForm mocks base method.
-func (m *MockHTTP) PostForm(arg0 string, arg1 url.Values) (client.Response, error) {
+func (m *MockHTTP) PostForm(arg0 string, arg1 url.Values) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PostForm", arg0, arg1)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -120,10 +120,10 @@ func (mr *MockHTTPMockRecorder) PostForm(arg0, arg1 any) *gomock.Call {
 }
 
 // ReadResponse mocks base method.
-func (m *MockHTTP) ReadResponse(arg0 *bufio.Reader, arg1 *http.Request) (client.Response, error) {
+func (m *MockHTTP) ReadResponse(arg0 *bufio.Reader, arg1 *http0.Request) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ReadResponse", arg0, arg1)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -185,10 +185,10 @@ func (mr *MockClientMockRecorder) CloseIdleConnections() *gomock.Call {
 }
 
 // Do mocks base method.
-func (m *MockClient) Do(arg0 *http.Request) (client.Response, error) {
+func (m *MockClient) Do(arg0 *http0.Request) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Do", arg0)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -200,10 +200,10 @@ func (mr *MockClientMockRecorder) Do(arg0 any) *gomock.Call {
 }
 
 // Get mocks base method.
-func (m *MockClient) Get(arg0 string) (client.Response, error) {
+func (m *MockClient) Get(arg0 string) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Get", arg0)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -215,10 +215,10 @@ func (mr *MockClientMockRecorder) Get(arg0 any) *gomock.Call {
 }
 
 // Head mocks base method.
-func (m *MockClient) Head(arg0 string) (client.Response, error) {
+func (m *MockClient) Head(arg0 string) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Head", arg0)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -230,10 +230,10 @@ func (mr *MockClientMockRecorder) Head(arg0 any) *gomock.Call {
 }
 
 // Post mocks base method.
-func (m *MockClient) Post(arg0, arg1 string, arg2 io.Reader) (client.Response, error) {
+func (m *MockClient) Post(arg0, arg1 string, arg2 io.Reader) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Post", arg0, arg1, arg2)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -245,10 +245,10 @@ func (mr *MockClientMockRecorder) Post(arg0, arg1, arg2 any) *gomock.Call {
 }
 
 // PostForm mocks base method.
-func (m *MockClient) PostForm(arg0 string, arg1 url.Values) (client.Response, error) {
+func (m *MockClient) PostForm(arg0 string, arg1 url.Values) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PostForm", arg0, arg1)
-	ret0, _ := ret[0].(client.Response)
+	ret0, _ := ret[0].(http.Response)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -378,10 +378,10 @@ func (mr *MockResponseMockRecorder) ContentLength() *gomock.Call {
 }
 
 // Cookies mocks base method.
-func (m *MockResponse) Cookies() []*http.Cookie {
+func (m *MockResponse) Cookies() []*http0.Cookie {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Cookies")
-	ret0, _ := ret[0].([]*http.Cookie)
+	ret0, _ := ret[0].([]*http0.Cookie)
 	return ret0
 }
 
@@ -392,10 +392,10 @@ func (mr *MockResponseMockRecorder) Cookies() *gomock.Call {
 }
 
 // Header mocks base method.
-func (m *MockResponse) Header() http.Header {
+func (m *MockResponse) Header() http0.Header {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(http.Header)
+	ret0, _ := ret[0].(http0.Header)
 	return ret0
 }
 
@@ -477,10 +477,10 @@ func (mr *MockResponseMockRecorder) ProtoMinor() *gomock.Call {
 }
 
 // Request mocks base method.
-func (m *MockResponse) Request() client.Request {
+func (m *MockResponse) Request() http.Request {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Request")
-	ret0, _ := ret[0].(client.Request)
+	ret0, _ := ret[0].(http.Request)
 	return ret0
 }
 
@@ -533,10 +533,10 @@ func (mr *MockResponseMockRecorder) TLS() *gomock.Call {
 }
 
 // Trailer mocks base method.
-func (m *MockResponse) Trailer() http.Header {
+func (m *MockResponse) Trailer() http0.Header {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(http.Header)
+	ret0, _ := ret[0].(http0.Header)
 	return ret0
 }
 
