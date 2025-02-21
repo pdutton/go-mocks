@@ -41,6 +41,6 @@ os/mock_os/all.go:
 
 .PHONY: sync/mock_sync/all.go
 sync/mock_sync/all.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/sync Cond,Locker,Map,Mutex,Once,Pool,RWMutex,WaitGroup
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/sync Cond,Locker,Map,Mutex,Once,Pool,RWMutex,Sync,WaitGroup
 
 
