@@ -585,20 +585,6 @@ func (mr *MockSyncMockRecorder) NewCond(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewCond", reflect.TypeOf((*MockSync)(nil).NewCond), arg0)
 }
 
-// NewLockedMutex mocks base method.
-func (m *MockSync) NewLockedMutex() sync.Mutex {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "NewLockedMutex")
-	ret0, _ := ret[0].(sync.Mutex)
-	return ret0
-}
-
-// NewLockedMutex indicates an expected call of NewLockedMutex.
-func (mr *MockSyncMockRecorder) NewLockedMutex() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewLockedMutex", reflect.TypeOf((*MockSync)(nil).NewLockedMutex))
-}
-
 // NewMap mocks base method.
 func (m *MockSync) NewMap() sync.Map {
 	m.ctrl.T.Helper()

@@ -15,11 +15,11 @@ all: \
 mockgen: 
 	$(GO) install go.uber.org/mock/mockgen@latest
 
-# Package io:
+# Package github.com/pdutton/io:
 
 .PHONY: io/mock_io/all.go
 io/mock_io/all.go:
-	$(MOCKGEN) -destination $@ io ByteScanner,ByteWriter,Closer,ReadCloser,ReadSeekCloser,ReadSeeker,ReadWriteCloser,ReadWriteSeeker,ReadWriter,Reader,ReaderAt,ReaderFrom,RuneReader,RuneScanner,Seeker,StringWriter,WriteCloser,WriteSeeker,Writer,WriterAt,WriterTo
+	$(MOCKGEN) -destination $@ -package mock_io github.com/pdutton/go-interfaces/io IO,ByteScanner,ByteWriter,Closer,ReadCloser,ReadSeekCloser,ReadSeeker,ReadWriteCloser,ReadWriteSeeker,ReadWriter,Reader,ReaderAt,ReaderFrom,RuneReader,RuneScanner,Seeker,StringWriter,WriteCloser,WriteSeeker,Writer,WriterAt,WriterTo,LimitedReader,OffsetWriter,PipeReader,PipeWriter,SectionReader
 
 # Package github.com/pdutton/net/http/client:
 
