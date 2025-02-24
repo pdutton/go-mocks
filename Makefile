@@ -52,7 +52,7 @@ path/mock_path/all.go:
 
 .PHONY: path/filepath/mock_filepath/all.go
 path/filepath/mock_filepath/all.go:
-	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/path/filepath FilePath
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/path/filepath DirEntry,FileInfo,FilePath
 
 .PHONY: sync/mock_sync/all.go
 sync/mock_sync/all.go:
