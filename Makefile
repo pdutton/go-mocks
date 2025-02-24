@@ -6,9 +6,12 @@ MOCKGEN?=mockgen
 .PHONY: all
 all: \
   io/mock_io/all.go \
+  io/fs/mock_fs/all.go \
   net/http/client/mock_client/all.go \
   net/http/server/mock_server/all.go \
   os/mock_os/all.go \
+  path/mock_path/all.go \
+  path/filepath/mock_filepath/all.go \
   sync/mock_sync/all.go
 
 .PHONY: mockgen
@@ -20,6 +23,10 @@ mockgen:
 .PHONY: io/mock_io/all.go
 io/mock_io/all.go:
 	$(MOCKGEN) -destination $@ -package mock_io github.com/pdutton/go-interfaces/io IO,ByteScanner,ByteWriter,Closer,ReadCloser,ReadSeekCloser,ReadSeeker,ReadWriteCloser,ReadWriteSeeker,ReadWriter,Reader,ReaderAt,ReaderFrom,RuneReader,RuneScanner,Seeker,StringWriter,WriteCloser,WriteSeeker,Writer,WriterAt,WriterTo,LimitedReader,OffsetWriter,PipeReader,PipeWriter,SectionReader
+
+.PHONY: io/fs/mock_fs/all.go
+io/fs/mock_fs/all.go:
+	$(MOCKGEN) -destination $@ -package mock_fs github.com/pdutton/go-interfaces/io/fs FileSystem,DirEntry,FS,File,FileInfo,FileMode,GlobFS,ReadDirFS,ReadDirFile,ReadFileFS,StatFS,SubFS
 
 # Package github.com/pdutton/net/http/client:
 
@@ -38,6 +45,14 @@ net/http/server/mock_server/all.go:
 .PHONY: os/mock_os/all.go
 os/mock_os/all.go:
 	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/os File,FileInfo,OS,Process,Root
+
+.PHONY: path/mock_path/all.go
+path/mock_path/all.go:
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/path Path
+
+.PHONY: path/filepath/mock_filepath/all.go
+path/filepath/mock_filepath/all.go:
+	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/path/filepath FilePath
 
 .PHONY: sync/mock_sync/all.go
 sync/mock_sync/all.go:
