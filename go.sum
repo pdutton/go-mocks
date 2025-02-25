@@ -1,4 +1,4 @@
-github.com/pdutton/go-interfaces v0.0.15 h1:oAvpOHPar+n14Tmmm+IMzRd41nQU+jiusg+Wx0trG7Q=
-github.com/pdutton/go-interfaces v0.0.15/go.mod h1:6onLjhPknWr5AejDknZ3DWoUNd+BWvgU2QgbyQkr2VI=
+github.com/pdutton/go-interfaces v0.0.16 h1:SOzsCzn5ffjdRmAFGRtM3mFl6vn+pENt+neSxfSVguU=
+github.com/pdutton/go-interfaces v0.0.16/go.mod h1:6onLjhPknWr5AejDknZ3DWoUNd+BWvgU2QgbyQkr2VI=
 go.uber.org/mock v0.5.0 h1:KAMbZvZPyBPWgD14IrIQ38QCyjwpvVVV6K/bHl1IwQU=
 go.uber.org/mock v0.5.0/go.mod h1:ge71pBPLYDk7QIi1LupWxdAykm7KIEFchiOqd6z7qMM=
