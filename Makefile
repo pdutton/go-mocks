@@ -10,6 +10,7 @@ all: \
   net/http/client/mock_client/all.go \
   net/http/server/mock_server/all.go \
   os/mock_os/all.go \
+  os/exec/mock_exec/all.go \
   path/mock_path/all.go \
   path/filepath/mock_filepath/all.go \
   sync/mock_sync/all.go
@@ -46,13 +47,25 @@ net/http/server/mock_server/all.go:
 os/mock_os/all.go:
 	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/os File,FileInfo,OS,Process,Root
 
+# Package github.com/pdutton/io/exec:
+
+.PHONY: os/exec/mock_exec/all.go
+os/exec/mock_exec/all.go:
+	$(MOCKGEN) -destination $@ -package mock_exec github.com/pdutton/go-interfaces/os/exec Exec,Cmd
+
+# Package path:
+
 .PHONY: path/mock_path/all.go
 path/mock_path/all.go:
 	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/path Path
 
+# Package path/filepath:
+
 .PHONY: path/filepath/mock_filepath/all.go
 path/filepath/mock_filepath/all.go:
 	$(MOCKGEN) -destination $@ github.com/pdutton/go-interfaces/path/filepath DirEntry,FileInfo,FilePath
+
+# Package sync:
 
 .PHONY: sync/mock_sync/all.go
 sync/mock_sync/all.go:
