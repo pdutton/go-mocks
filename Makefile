@@ -7,6 +7,7 @@ MOCKGEN?=mockgen
 all: \
   io/mock_io/all.go \
   io/fs/mock_fs/all.go \
+  net/mock_net/all.go \
   net/http/client/mock_client/all.go \
   net/http/server/mock_server/all.go \
   os/mock_os/all.go \
@@ -28,6 +29,12 @@ io/mock_io/all.go:
 .PHONY: io/fs/mock_fs/all.go
 io/fs/mock_fs/all.go:
 	$(MOCKGEN) -destination $@ -package mock_fs github.com/pdutton/go-interfaces/io/fs FileSystem,DirEntry,FS,File,FileInfo,FileMode,GlobFS,ReadDirFS,ReadDirFile,ReadFileFS,StatFS,SubFS
+
+# Package github.com/pdutton/net:
+
+.PHONY: net/mock_net/all.go
+net/mock_net/all.go:
+	$(MOCKGEN) -destination $@ -package mock_net github.com/pdutton/go-interfaces/net Addr,Conn,Dialer,IPConn,ListenConfig,Listener,Net,PacketConn,Resolver,TCPConn,TCPListener,UDPConn,UnixConn,UnixListener 
 
 # Package github.com/pdutton/net/http/client:
 
