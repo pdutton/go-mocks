@@ -1239,6 +1239,60 @@ func (mr *MockNetMockRecorder) LookupTXT(name any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LookupTXT", reflect.TypeOf((*MockNet)(nil).LookupTXT), name)
 }
 
+// NewDialer mocks base method.
+func (m *MockNet) NewDialer(options ...net.DialerOption) net.Dialer {
+	m.ctrl.T.Helper()
+	varargs := []any{}
+	for _, a := range options {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "NewDialer", varargs...)
+	ret0, _ := ret[0].(net.Dialer)
+	return ret0
+}
+
+// NewDialer indicates an expected call of NewDialer.
+func (mr *MockNetMockRecorder) NewDialer(options ...any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewDialer", reflect.TypeOf((*MockNet)(nil).NewDialer), options...)
+}
+
+// NewListenConfig mocks base method.
+func (m *MockNet) NewListenConfig(options ...net.ListenConfigOption) net.ListenConfig {
+	m.ctrl.T.Helper()
+	varargs := []any{}
+	for _, a := range options {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "NewListenConfig", varargs...)
+	ret0, _ := ret[0].(net.ListenConfig)
+	return ret0
+}
+
+// NewListenConfig indicates an expected call of NewListenConfig.
+func (mr *MockNetMockRecorder) NewListenConfig(options ...any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewListenConfig", reflect.TypeOf((*MockNet)(nil).NewListenConfig), options...)
+}
+
+// NewResolver mocks base method.
+func (m *MockNet) NewResolver(options ...net.ResolverOption) net.Resolver {
+	m.ctrl.T.Helper()
+	varargs := []any{}
+	for _, a := range options {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "NewResolver", varargs...)
+	ret0, _ := ret[0].(net.Resolver)
+	return ret0
+}
+
+// NewResolver indicates an expected call of NewResolver.
+func (mr *MockNetMockRecorder) NewResolver(options ...any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewResolver", reflect.TypeOf((*MockNet)(nil).NewResolver), options...)
+}
+
 // ParseCIDR mocks base method.
 func (m *MockNet) ParseCIDR(s string) (net0.IP, *net0.IPNet, error) {
 	m.ctrl.T.Helper()
