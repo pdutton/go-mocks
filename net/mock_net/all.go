@@ -1276,14 +1276,14 @@ func (mr *MockNetMockRecorder) NewListenConfig(options ...any) *gomock.Call {
 }
 
 // NewResolver mocks base method.
-func (m *MockNet) NewResolver(options ...net.ResolverOption) net.Resolver {
+func (m *MockNet) NewResolver(options ...net.ResolverOption) net.resolverFacade {
 	m.ctrl.T.Helper()
 	varargs := []any{}
 	for _, a := range options {
 		varargs = append(varargs, a)
 	}
 	ret := m.ctrl.Call(m, "NewResolver", varargs...)
-	ret0, _ := ret[0].(net.Resolver)
+	ret0, _ := ret[0].(net.resolverFacade)
 	return ret0
 }
 
