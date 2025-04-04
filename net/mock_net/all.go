@@ -1577,6 +1577,20 @@ func (m *MockResolver) EXPECT() *MockResolverMockRecorder {
 	return m.recorder
 }
 
+// GetUnderlyingResolver mocks base method.
+func (m *MockResolver) GetUnderlyingResolver() *net0.Resolver {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetUnderlyingResolver")
+	ret0, _ := ret[0].(*net0.Resolver)
+	return ret0
+}
+
+// GetUnderlyingResolver indicates an expected call of GetUnderlyingResolver.
+func (mr *MockResolverMockRecorder) GetUnderlyingResolver() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUnderlyingResolver", reflect.TypeOf((*MockResolver)(nil).GetUnderlyingResolver))
+}
+
 // LookupAddr mocks base method.
 func (m *MockResolver) LookupAddr(ctx context.Context, addr string) ([]string, error) {
 	m.ctrl.T.Helper()
@@ -1741,20 +1755,6 @@ func (m *MockResolver) LookupTXT(ctx context.Context, name string) ([]string, er
 func (mr *MockResolverMockRecorder) LookupTXT(ctx, name any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LookupTXT", reflect.TypeOf((*MockResolver)(nil).LookupTXT), ctx, name)
-}
-
-// getUnderlyingResolver mocks base method.
-func (m *MockResolver) getUnderlyingResolver() *net0.Resolver {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "getUnderlyingResolver")
-	ret0, _ := ret[0].(*net0.Resolver)
-	return ret0
-}
-
-// getUnderlyingResolver indicates an expected call of getUnderlyingResolver.
-func (mr *MockResolverMockRecorder) getUnderlyingResolver() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "getUnderlyingResolver", reflect.TypeOf((*MockResolver)(nil).getUnderlyingResolver))
 }
 
 // MockTCPConn is a mock of TCPConn interface.
