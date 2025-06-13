@@ -521,6 +521,48 @@ func (m *MockFileMode) EXPECT() *MockFileModeMockRecorder {
 	return m.recorder
 }
 
+// IsAppend mocks base method.
+func (m *MockFileMode) IsAppend() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsAppend")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsAppend indicates an expected call of IsAppend.
+func (mr *MockFileModeMockRecorder) IsAppend() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsAppend", reflect.TypeOf((*MockFileMode)(nil).IsAppend))
+}
+
+// IsCharDevice mocks base method.
+func (m *MockFileMode) IsCharDevice() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsCharDevice")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsCharDevice indicates an expected call of IsCharDevice.
+func (mr *MockFileModeMockRecorder) IsCharDevice() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsCharDevice", reflect.TypeOf((*MockFileMode)(nil).IsCharDevice))
+}
+
+// IsDevice mocks base method.
+func (m *MockFileMode) IsDevice() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsDevice")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsDevice indicates an expected call of IsDevice.
+func (mr *MockFileModeMockRecorder) IsDevice() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsDevice", reflect.TypeOf((*MockFileMode)(nil).IsDevice))
+}
+
 // IsDir mocks base method.
 func (m *MockFileMode) IsDir() bool {
 	m.ctrl.T.Helper()
@@ -535,6 +577,48 @@ func (mr *MockFileModeMockRecorder) IsDir() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsDir", reflect.TypeOf((*MockFileMode)(nil).IsDir))
 }
 
+// IsExclusive mocks base method.
+func (m *MockFileMode) IsExclusive() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsExclusive")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsExclusive indicates an expected call of IsExclusive.
+func (mr *MockFileModeMockRecorder) IsExclusive() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsExclusive", reflect.TypeOf((*MockFileMode)(nil).IsExclusive))
+}
+
+// IsIrregular mocks base method.
+func (m *MockFileMode) IsIrregular() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsIrregular")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsIrregular indicates an expected call of IsIrregular.
+func (mr *MockFileModeMockRecorder) IsIrregular() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsIrregular", reflect.TypeOf((*MockFileMode)(nil).IsIrregular))
+}
+
+// IsNamedPipe mocks base method.
+func (m *MockFileMode) IsNamedPipe() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsNamedPipe")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsNamedPipe indicates an expected call of IsNamedPipe.
+func (mr *MockFileModeMockRecorder) IsNamedPipe() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsNamedPipe", reflect.TypeOf((*MockFileMode)(nil).IsNamedPipe))
+}
+
 // IsRegular mocks base method.
 func (m *MockFileMode) IsRegular() bool {
 	m.ctrl.T.Helper()
@@ -547,6 +631,90 @@ func (m *MockFileMode) IsRegular() bool {
 func (mr *MockFileModeMockRecorder) IsRegular() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsRegular", reflect.TypeOf((*MockFileMode)(nil).IsRegular))
+}
+
+// IsSetgid mocks base method.
+func (m *MockFileMode) IsSetgid() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsSetgid")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsSetgid indicates an expected call of IsSetgid.
+func (mr *MockFileModeMockRecorder) IsSetgid() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsSetgid", reflect.TypeOf((*MockFileMode)(nil).IsSetgid))
+}
+
+// IsSetuid mocks base method.
+func (m *MockFileMode) IsSetuid() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsSetuid")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsSetuid indicates an expected call of IsSetuid.
+func (mr *MockFileModeMockRecorder) IsSetuid() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsSetuid", reflect.TypeOf((*MockFileMode)(nil).IsSetuid))
+}
+
+// IsSocket mocks base method.
+func (m *MockFileMode) IsSocket() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsSocket")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsSocket indicates an expected call of IsSocket.
+func (mr *MockFileModeMockRecorder) IsSocket() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsSocket", reflect.TypeOf((*MockFileMode)(nil).IsSocket))
+}
+
+// IsSticky mocks base method.
+func (m *MockFileMode) IsSticky() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsSticky")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsSticky indicates an expected call of IsSticky.
+func (mr *MockFileModeMockRecorder) IsSticky() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsSticky", reflect.TypeOf((*MockFileMode)(nil).IsSticky))
+}
+
+// IsSymlink mocks base method.
+func (m *MockFileMode) IsSymlink() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsSymlink")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsSymlink indicates an expected call of IsSymlink.
+func (mr *MockFileModeMockRecorder) IsSymlink() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsSymlink", reflect.TypeOf((*MockFileMode)(nil).IsSymlink))
+}
+
+// IsTemporary mocks base method.
+func (m *MockFileMode) IsTemporary() bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "IsTemporary")
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// IsTemporary indicates an expected call of IsTemporary.
+func (mr *MockFileModeMockRecorder) IsTemporary() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsTemporary", reflect.TypeOf((*MockFileMode)(nil).IsTemporary))
 }
 
 // Perm mocks base method.
