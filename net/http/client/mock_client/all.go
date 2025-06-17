@@ -283,6 +283,20 @@ func (m *MockRequest) EXPECT() *MockRequestMockRecorder {
 	return m.recorder
 }
 
+// RealRequest mocks base method.
+func (m *MockRequest) RealRequest() *http0.Request {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "RealRequest")
+	ret0, _ := ret[0].(*http0.Request)
+	return ret0
+}
+
+// RealRequest indicates an expected call of RealRequest.
+func (mr *MockRequestMockRecorder) RealRequest() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RealRequest", reflect.TypeOf((*MockRequest)(nil).RealRequest))
+}
+
 // Write mocks base method.
 func (m *MockRequest) Write(arg0 io.Writer) error {
 	m.ctrl.T.Helper()
