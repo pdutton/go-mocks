@@ -61,7 +61,7 @@ func (mr *MockFileMockRecorder) Chdir() *gomock.Call {
 }
 
 // Chmod mocks base method.
-func (m *MockFile) Chmod(arg0 fs.FileMode) error {
+func (m *MockFile) Chmod(arg0 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Chmod", arg0)
 	ret0, _ := ret[0].(error)
@@ -570,7 +570,7 @@ func (mr *MockOSMockRecorder) Chdir(arg0 any) *gomock.Call {
 }
 
 // Chmod mocks base method.
-func (m *MockOS) Chmod(arg0 string, arg1 fs.FileMode) error {
+func (m *MockOS) Chmod(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Chmod", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -1051,7 +1051,7 @@ func (mr *MockOSMockRecorder) Lstat(arg0 any) *gomock.Call {
 }
 
 // Mkdir mocks base method.
-func (m *MockOS) Mkdir(arg0 string, arg1 fs.FileMode) error {
+func (m *MockOS) Mkdir(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Mkdir", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -1065,7 +1065,7 @@ func (mr *MockOSMockRecorder) Mkdir(arg0, arg1 any) *gomock.Call {
 }
 
 // MkdirAll mocks base method.
-func (m *MockOS) MkdirAll(arg0 string, arg1 fs.FileMode) error {
+func (m *MockOS) MkdirAll(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "MkdirAll", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -1137,7 +1137,7 @@ func (mr *MockOSMockRecorder) Open(arg0 any) *gomock.Call {
 }
 
 // OpenFile mocks base method.
-func (m *MockOS) OpenFile(arg0 string, arg1 int, arg2 fs.FileMode) (os.File, error) {
+func (m *MockOS) OpenFile(arg0 string, arg1 int, arg2 fs0.FileMode) (os.File, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "OpenFile", arg0, arg1, arg2)
 	ret0, _ := ret[0].(os.File)
@@ -1486,7 +1486,7 @@ func (mr *MockOSMockRecorder) UserHomeDir() *gomock.Call {
 }
 
 // WriteFile mocks base method.
-func (m *MockOS) WriteFile(arg0 string, arg1 []byte, arg2 fs.FileMode) error {
+func (m *MockOS) WriteFile(arg0 string, arg1 []byte, arg2 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "WriteFile", arg0, arg1, arg2)
 	ret0, _ := ret[0].(error)
