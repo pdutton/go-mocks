@@ -191,10 +191,10 @@ func (mr *MockFileMockRecorder) ReadFrom(arg0 any) *gomock.Call {
 }
 
 // Readdir mocks base method.
-func (m *MockFile) Readdir(arg0 int) ([]fs0.FileInfo, error) {
+func (m *MockFile) Readdir(arg0 int) ([]fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Readdir", arg0)
-	ret0, _ := ret[0].([]fs0.FileInfo)
+	ret0, _ := ret[0].([]fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -278,10 +278,10 @@ func (mr *MockFileMockRecorder) SetWriteDeadline(arg0 any) *gomock.Call {
 }
 
 // Stat mocks base method.
-func (m *MockFile) Stat() (fs0.FileInfo, error) {
+func (m *MockFile) Stat() (fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Stat")
-	ret0, _ := ret[0].(fs0.FileInfo)
+	ret0, _ := ret[0].(fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -448,10 +448,10 @@ func (mr *MockFileInfoMockRecorder) ModTime() *gomock.Call {
 }
 
 // Mode mocks base method.
-func (m *MockFileInfo) Mode() fs0.FileMode {
+func (m *MockFileInfo) Mode() fs.FileMode {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Mode")
-	ret0, _ := ret[0].(fs0.FileMode)
+	ret0, _ := ret[0].(fs.FileMode)
 	return ret0
 }
 
@@ -473,6 +473,20 @@ func (m *MockFileInfo) Name() string {
 func (mr *MockFileInfoMockRecorder) Name() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Name", reflect.TypeOf((*MockFileInfo)(nil).Name))
+}
+
+// Nub mocks base method.
+func (m *MockFileInfo) Nub() fs0.FileInfo {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Nub")
+	ret0, _ := ret[0].(fs0.FileInfo)
+	return ret0
+}
+
+// Nub indicates an expected call of Nub.
+func (mr *MockFileInfoMockRecorder) Nub() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Nub", reflect.TypeOf((*MockFileInfo)(nil).Nub))
 }
 
 // Size mocks base method.
@@ -1022,10 +1036,10 @@ func (mr *MockOSMockRecorder) LookupEnv(arg0 any) *gomock.Call {
 }
 
 // Lstat mocks base method.
-func (m *MockOS) Lstat(arg0 string) (fs0.FileInfo, error) {
+func (m *MockOS) Lstat(arg0 string) (fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Lstat", arg0)
-	ret0, _ := ret[0].(fs0.FileInfo)
+	ret0, _ := ret[0].(fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -1271,7 +1285,7 @@ func (mr *MockOSMockRecorder) Rename(arg0, arg1 any) *gomock.Call {
 }
 
 // SameFile mocks base method.
-func (m *MockOS) SameFile(arg0, arg1 fs0.FileInfo) bool {
+func (m *MockOS) SameFile(arg0, arg1 fs.FileInfo) bool {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SameFile", arg0, arg1)
 	ret0, _ := ret[0].(bool)
@@ -1314,10 +1328,10 @@ func (mr *MockOSMockRecorder) StartProcess(arg0, arg1, arg2 any) *gomock.Call {
 }
 
 // Stat mocks base method.
-func (m *MockOS) Stat(arg0 string) (fs0.FileInfo, error) {
+func (m *MockOS) Stat(arg0 string) (fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Stat", arg0)
-	ret0, _ := ret[0].(fs0.FileInfo)
+	ret0, _ := ret[0].(fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -1662,10 +1676,10 @@ func (mr *MockRootMockRecorder) FS() *gomock.Call {
 }
 
 // Lstat mocks base method.
-func (m *MockRoot) Lstat(arg0 string) (fs0.FileInfo, error) {
+func (m *MockRoot) Lstat(arg0 string) (fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Lstat", arg0)
-	ret0, _ := ret[0].(fs0.FileInfo)
+	ret0, _ := ret[0].(fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -1778,10 +1792,10 @@ func (mr *MockRootMockRecorder) Remove(arg0 any) *gomock.Call {
 }
 
 // Stat mocks base method.
-func (m *MockRoot) Stat(arg0 string) (fs0.FileInfo, error) {
+func (m *MockRoot) Stat(arg0 string) (fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Stat", arg0)
-	ret0, _ := ret[0].(fs0.FileInfo)
+	ret0, _ := ret[0].(fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
