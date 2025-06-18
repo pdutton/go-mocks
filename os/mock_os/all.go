@@ -1691,7 +1691,7 @@ func (mr *MockRootMockRecorder) Lstat(arg0 any) *gomock.Call {
 }
 
 // Mkdir mocks base method.
-func (m *MockRoot) Mkdir(arg0 string, arg1 fs.FileMode) error {
+func (m *MockRoot) Mkdir(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Mkdir", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -1748,7 +1748,7 @@ func (mr *MockRootMockRecorder) Open(arg0 any) *gomock.Call {
 }
 
 // OpenFile mocks base method.
-func (m *MockRoot) OpenFile(arg0 string, arg1 int, arg2 fs.FileMode) (os.File, error) {
+func (m *MockRoot) OpenFile(arg0 string, arg1 int, arg2 fs0.FileMode) (os.File, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "OpenFile", arg0, arg1, arg2)
 	ret0, _ := ret[0].(os.File)
