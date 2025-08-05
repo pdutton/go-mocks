@@ -211,6 +211,20 @@ func (m *MockDirEntry) EXPECT() *MockDirEntryMockRecorder {
 	return m.recorder
 }
 
+// Format mocks base method.
+func (m *MockDirEntry) Format() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Format")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// Format indicates an expected call of Format.
+func (mr *MockDirEntryMockRecorder) Format() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Format", reflect.TypeOf((*MockDirEntry)(nil).Format))
+}
+
 // Info mocks base method.
 func (m *MockDirEntry) Info() (fs0.FileInfo, error) {
 	m.ctrl.T.Helper()
@@ -266,20 +280,6 @@ func (m *MockDirEntry) Type() fs0.FileMode {
 func (mr *MockDirEntryMockRecorder) Type() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Type", reflect.TypeOf((*MockDirEntry)(nil).Type))
-}
-
-// format mocks base method.
-func (m *MockDirEntry) format() string {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "format")
-	ret0, _ := ret[0].(string)
-	return ret0
-}
-
-// format indicates an expected call of format.
-func (mr *MockDirEntryMockRecorder) format() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "format", reflect.TypeOf((*MockDirEntry)(nil).format))
 }
 
 // MockFS is a mock of FS interface.
