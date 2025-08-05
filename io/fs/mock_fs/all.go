@@ -43,7 +43,7 @@ func (m *MockFileSystem) EXPECT() *MockFileSystemMockRecorder {
 }
 
 // FileInfoToDirEntry mocks base method.
-func (m *MockFileSystem) FileInfoToDirEntry(arg0 fs0.FileInfo) fs.DirEntry {
+func (m *MockFileSystem) FileInfoToDirEntry(arg0 fs.FileInfo) fs.DirEntry {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FileInfoToDirEntry", arg0)
 	ret0, _ := ret[0].(fs.DirEntry)
@@ -71,7 +71,7 @@ func (mr *MockFileSystemMockRecorder) FormatDirEntry(arg0 any) *gomock.Call {
 }
 
 // FormatFileInfo mocks base method.
-func (m *MockFileSystem) FormatFileInfo(arg0 fs0.FileInfo) string {
+func (m *MockFileSystem) FormatFileInfo(arg0 fs.FileInfo) string {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FormatFileInfo", arg0)
 	ret0, _ := ret[0].(string)
@@ -130,10 +130,10 @@ func (mr *MockFileSystemMockRecorder) ReadFile(arg0, arg1 any) *gomock.Call {
 }
 
 // Stat mocks base method.
-func (m *MockFileSystem) Stat(arg0 fs.FileSystem, arg1 string) (fs0.FileInfo, error) {
+func (m *MockFileSystem) Stat(arg0 fs.FileSystem, arg1 string) (fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Stat", arg0, arg1)
-	ret0, _ := ret[0].(fs0.FileInfo)
+	ret0, _ := ret[0].(fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -226,10 +226,10 @@ func (mr *MockDirEntryMockRecorder) Format() *gomock.Call {
 }
 
 // Info mocks base method.
-func (m *MockDirEntry) Info() (fs0.FileInfo, error) {
+func (m *MockDirEntry) Info() (fs.FileInfo, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Info")
-	ret0, _ := ret[0].(fs0.FileInfo)
+	ret0, _ := ret[0].(fs.FileInfo)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -268,11 +268,25 @@ func (mr *MockDirEntryMockRecorder) Name() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Name", reflect.TypeOf((*MockDirEntry)(nil).Name))
 }
 
+// Nub mocks base method.
+func (m *MockDirEntry) Nub() fs0.DirEntry {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Nub")
+	ret0, _ := ret[0].(fs0.DirEntry)
+	return ret0
+}
+
+// Nub indicates an expected call of Nub.
+func (mr *MockDirEntryMockRecorder) Nub() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Nub", reflect.TypeOf((*MockDirEntry)(nil).Nub))
+}
+
 // Type mocks base method.
-func (m *MockDirEntry) Type() fs0.FileMode {
+func (m *MockDirEntry) Type() fs.FileMode {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Type")
-	ret0, _ := ret[0].(fs0.FileMode)
+	ret0, _ := ret[0].(fs.FileMode)
 	return ret0
 }
 
@@ -442,10 +456,10 @@ func (mr *MockFileInfoMockRecorder) ModTime() *gomock.Call {
 }
 
 // Mode mocks base method.
-func (m *MockFileInfo) Mode() fs0.FileMode {
+func (m *MockFileInfo) Mode() fs.FileMode {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Mode")
-	ret0, _ := ret[0].(fs0.FileMode)
+	ret0, _ := ret[0].(fs.FileMode)
 	return ret0
 }
 
@@ -467,6 +481,20 @@ func (m *MockFileInfo) Name() string {
 func (mr *MockFileInfoMockRecorder) Name() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Name", reflect.TypeOf((*MockFileInfo)(nil).Name))
+}
+
+// Nub mocks base method.
+func (m *MockFileInfo) Nub() fs0.FileInfo {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Nub")
+	ret0, _ := ret[0].(fs0.FileInfo)
+	return ret0
+}
+
+// Nub indicates an expected call of Nub.
+func (mr *MockFileInfoMockRecorder) Nub() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Nub", reflect.TypeOf((*MockFileInfo)(nil).Nub))
 }
 
 // Size mocks base method.
@@ -717,11 +745,25 @@ func (mr *MockFileModeMockRecorder) IsTemporary() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsTemporary", reflect.TypeOf((*MockFileMode)(nil).IsTemporary))
 }
 
+// Nub mocks base method.
+func (m *MockFileMode) Nub() fs0.FileMode {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Nub")
+	ret0, _ := ret[0].(fs0.FileMode)
+	return ret0
+}
+
+// Nub indicates an expected call of Nub.
+func (mr *MockFileModeMockRecorder) Nub() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Nub", reflect.TypeOf((*MockFileMode)(nil).Nub))
+}
+
 // Perm mocks base method.
-func (m *MockFileMode) Perm() fs.FileMode {
+func (m *MockFileMode) Perm() fs0.FileMode {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Perm")
-	ret0, _ := ret[0].(fs.FileMode)
+	ret0, _ := ret[0].(fs0.FileMode)
 	return ret0
 }
 
@@ -743,20 +785,6 @@ func (m *MockFileMode) String() string {
 func (mr *MockFileModeMockRecorder) String() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "String", reflect.TypeOf((*MockFileMode)(nil).String))
-}
-
-// Type mocks base method.
-func (m *MockFileMode) Type() fs.FileMode {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Type")
-	ret0, _ := ret[0].(fs.FileMode)
-	return ret0
-}
-
-// Type indicates an expected call of Type.
-func (mr *MockFileModeMockRecorder) Type() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Type", reflect.TypeOf((*MockFileMode)(nil).Type))
 }
 
 // MockGlobFS is a mock of GlobFS interface.
