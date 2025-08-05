@@ -11,12 +11,13 @@ package mock_os
 
 import (
 	io "io"
-	fs "io/fs"
+	fs0 "io/fs"
 	os0 "os"
 	reflect "reflect"
 	syscall "syscall"
 	time "time"
 
+	fs "github.com/pdutton/go-interfaces/io/fs"
 	os "github.com/pdutton/go-interfaces/os"
 	gomock "go.uber.org/mock/gomock"
 )
@@ -60,7 +61,7 @@ func (mr *MockFileMockRecorder) Chdir() *gomock.Call {
 }
 
 // Chmod mocks base method.
-func (m *MockFile) Chmod(arg0 fs.FileMode) error {
+func (m *MockFile) Chmod(arg0 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Chmod", arg0)
 	ret0, _ := ret[0].(error)
@@ -474,6 +475,20 @@ func (mr *MockFileInfoMockRecorder) Name() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Name", reflect.TypeOf((*MockFileInfo)(nil).Name))
 }
 
+// Nub mocks base method.
+func (m *MockFileInfo) Nub() fs0.FileInfo {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Nub")
+	ret0, _ := ret[0].(fs0.FileInfo)
+	return ret0
+}
+
+// Nub indicates an expected call of Nub.
+func (mr *MockFileInfoMockRecorder) Nub() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Nub", reflect.TypeOf((*MockFileInfo)(nil).Nub))
+}
+
 // Size mocks base method.
 func (m *MockFileInfo) Size() int64 {
 	m.ctrl.T.Helper()
@@ -555,7 +570,7 @@ func (mr *MockOSMockRecorder) Chdir(arg0 any) *gomock.Call {
 }
 
 // Chmod mocks base method.
-func (m *MockOS) Chmod(arg0 string, arg1 fs.FileMode) error {
+func (m *MockOS) Chmod(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Chmod", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -609,7 +624,7 @@ func (mr *MockOSMockRecorder) Clearenv() *gomock.Call {
 }
 
 // CopyFS mocks base method.
-func (m *MockOS) CopyFS(arg0 string, arg1 fs.FS) error {
+func (m *MockOS) CopyFS(arg0 string, arg1 fs0.FS) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CopyFS", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -653,10 +668,10 @@ func (mr *MockOSMockRecorder) CreateTemp(arg0, arg1 any) *gomock.Call {
 }
 
 // DirFS mocks base method.
-func (m *MockOS) DirFS(arg0 string) fs.FS {
+func (m *MockOS) DirFS(arg0 string) fs0.FS {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DirFS", arg0)
-	ret0, _ := ret[0].(fs.FS)
+	ret0, _ := ret[0].(fs0.FS)
 	return ret0
 }
 
@@ -1036,7 +1051,7 @@ func (mr *MockOSMockRecorder) Lstat(arg0 any) *gomock.Call {
 }
 
 // Mkdir mocks base method.
-func (m *MockOS) Mkdir(arg0 string, arg1 fs.FileMode) error {
+func (m *MockOS) Mkdir(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Mkdir", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -1050,7 +1065,7 @@ func (mr *MockOSMockRecorder) Mkdir(arg0, arg1 any) *gomock.Call {
 }
 
 // MkdirAll mocks base method.
-func (m *MockOS) MkdirAll(arg0 string, arg1 fs.FileMode) error {
+func (m *MockOS) MkdirAll(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "MkdirAll", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -1122,7 +1137,7 @@ func (mr *MockOSMockRecorder) Open(arg0 any) *gomock.Call {
 }
 
 // OpenFile mocks base method.
-func (m *MockOS) OpenFile(arg0 string, arg1 int, arg2 fs.FileMode) (os.File, error) {
+func (m *MockOS) OpenFile(arg0 string, arg1 int, arg2 fs0.FileMode) (os.File, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "OpenFile", arg0, arg1, arg2)
 	ret0, _ := ret[0].(os.File)
@@ -1471,7 +1486,7 @@ func (mr *MockOSMockRecorder) UserHomeDir() *gomock.Call {
 }
 
 // WriteFile mocks base method.
-func (m *MockOS) WriteFile(arg0 string, arg1 []byte, arg2 fs.FileMode) error {
+func (m *MockOS) WriteFile(arg0 string, arg1 []byte, arg2 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "WriteFile", arg0, arg1, arg2)
 	ret0, _ := ret[0].(error)
@@ -1520,6 +1535,20 @@ func (m *MockProcess) Kill() error {
 func (mr *MockProcessMockRecorder) Kill() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Kill", reflect.TypeOf((*MockProcess)(nil).Kill))
+}
+
+// Nub mocks base method.
+func (m *MockProcess) Nub() *os0.Process {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Nub")
+	ret0, _ := ret[0].(*os0.Process)
+	return ret0
+}
+
+// Nub indicates an expected call of Nub.
+func (mr *MockProcessMockRecorder) Nub() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Nub", reflect.TypeOf((*MockProcess)(nil).Nub))
 }
 
 // PID mocks base method.
@@ -1633,10 +1662,10 @@ func (mr *MockRootMockRecorder) Create(arg0 any) *gomock.Call {
 }
 
 // FS mocks base method.
-func (m *MockRoot) FS() fs.FS {
+func (m *MockRoot) FS() fs0.FS {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FS")
-	ret0, _ := ret[0].(fs.FS)
+	ret0, _ := ret[0].(fs0.FS)
 	return ret0
 }
 
@@ -1662,7 +1691,7 @@ func (mr *MockRootMockRecorder) Lstat(arg0 any) *gomock.Call {
 }
 
 // Mkdir mocks base method.
-func (m *MockRoot) Mkdir(arg0 string, arg1 fs.FileMode) error {
+func (m *MockRoot) Mkdir(arg0 string, arg1 fs0.FileMode) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Mkdir", arg0, arg1)
 	ret0, _ := ret[0].(error)
@@ -1689,6 +1718,20 @@ func (mr *MockRootMockRecorder) Name() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Name", reflect.TypeOf((*MockRoot)(nil).Name))
 }
 
+// Nub mocks base method.
+func (m *MockRoot) Nub() *os0.Root {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Nub")
+	ret0, _ := ret[0].(*os0.Root)
+	return ret0
+}
+
+// Nub indicates an expected call of Nub.
+func (mr *MockRootMockRecorder) Nub() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Nub", reflect.TypeOf((*MockRoot)(nil).Nub))
+}
+
 // Open mocks base method.
 func (m *MockRoot) Open(arg0 string) (os.File, error) {
 	m.ctrl.T.Helper()
@@ -1705,7 +1748,7 @@ func (mr *MockRootMockRecorder) Open(arg0 any) *gomock.Call {
 }
 
 // OpenFile mocks base method.
-func (m *MockRoot) OpenFile(arg0 string, arg1 int, arg2 fs.FileMode) (os.File, error) {
+func (m *MockRoot) OpenFile(arg0 string, arg1 int, arg2 fs0.FileMode) (os.File, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "OpenFile", arg0, arg1, arg2)
 	ret0, _ := ret[0].(os.File)
