@@ -12,6 +12,7 @@ all: \
   net/http/server/mock_server/all.go \
   os/mock_os/all.go \
   os/exec/mock_exec/all.go \
+  os/signal/mock_signal/all.go \
   path/mock_path/all.go \
   path/filepath/mock_filepath/all.go \
   sync/mock_sync/all.go
@@ -59,6 +60,12 @@ os/mock_os/all.go:
 .PHONY: os/exec/mock_exec/all.go
 os/exec/mock_exec/all.go:
 	$(MOCKGEN) -destination $@ -package mock_exec github.com/pdutton/go-interfaces/os/exec Exec,Cmd
+
+# Package github.com/pdutton/io/signal:
+
+.PHONY: os/signal/mock_signal/all.go
+os/signal/mock_signal/all.go:
+	$(MOCKGEN) -destination $@ -package mock_signal github.com/pdutton/go-interfaces/os/signal Signal
 
 # Package path:
 
