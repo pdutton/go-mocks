@@ -11,6 +11,7 @@ package mock_http
 
 import (
 	bufio "bufio"
+	context "context"
 	tls "crypto/tls"
 	io "io"
 	http0 "net/http"
@@ -87,6 +88,64 @@ func (m *MockHTTP) Head(arg0 string) (http.Response, error) {
 func (mr *MockHTTPMockRecorder) Head(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Head", reflect.TypeOf((*MockHTTP)(nil).Head), arg0)
+}
+
+// NewClient mocks base method.
+func (m *MockHTTP) NewClient(options ...http.ClientOption) http.Client {
+	m.ctrl.T.Helper()
+	varargs := []any{}
+	for _, a := range options {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "NewClient", varargs...)
+	ret0, _ := ret[0].(http.Client)
+	return ret0
+}
+
+// NewClient indicates an expected call of NewClient.
+func (mr *MockHTTPMockRecorder) NewClient(options ...any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewClient", reflect.TypeOf((*MockHTTP)(nil).NewClient), options...)
+}
+
+// NewRequest mocks base method.
+func (m *MockHTTP) NewRequest(method, url string, body io.Reader, options ...http.RequestOption) (http.Request, error) {
+	m.ctrl.T.Helper()
+	varargs := []any{method, url, body}
+	for _, a := range options {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "NewRequest", varargs...)
+	ret0, _ := ret[0].(http.Request)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// NewRequest indicates an expected call of NewRequest.
+func (mr *MockHTTPMockRecorder) NewRequest(method, url, body any, options ...any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]any{method, url, body}, options...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewRequest", reflect.TypeOf((*MockHTTP)(nil).NewRequest), varargs...)
+}
+
+// NewRequestWithContext mocks base method.
+func (m *MockHTTP) NewRequestWithContext(ctx context.Context, method, url string, body io.Reader, options ...http.RequestOption) (http.Request, error) {
+	m.ctrl.T.Helper()
+	varargs := []any{ctx, method, url, body}
+	for _, a := range options {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "NewRequestWithContext", varargs...)
+	ret0, _ := ret[0].(http.Request)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// NewRequestWithContext indicates an expected call of NewRequestWithContext.
+func (mr *MockHTTPMockRecorder) NewRequestWithContext(ctx, method, url, body any, options ...any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]any{ctx, method, url, body}, options...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewRequestWithContext", reflect.TypeOf((*MockHTTP)(nil).NewRequestWithContext), varargs...)
 }
 
 // Post mocks base method.
