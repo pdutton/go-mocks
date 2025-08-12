@@ -185,7 +185,7 @@ func (mr *MockClientMockRecorder) CloseIdleConnections() *gomock.Call {
 }
 
 // Do mocks base method.
-func (m *MockClient) Do(arg0 *http0.Request) (http.Response, error) {
+func (m *MockClient) Do(arg0 http.Request) (http.Response, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Do", arg0)
 	ret0, _ := ret[0].(http.Response)
