@@ -273,6 +273,20 @@ func (mr *MockClientMockRecorder) Get(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockClient)(nil).Get), arg0)
 }
 
+// GetTransport mocks base method.
+func (m *MockClient) GetTransport() http0.RoundTripper {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetTransport")
+	ret0, _ := ret[0].(http0.RoundTripper)
+	return ret0
+}
+
+// GetTransport indicates an expected call of GetTransport.
+func (mr *MockClientMockRecorder) GetTransport() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTransport", reflect.TypeOf((*MockClient)(nil).GetTransport))
+}
+
 // Head mocks base method.
 func (m *MockClient) Head(arg0 string) (http.Response, error) {
 	m.ctrl.T.Helper()
