@@ -5,6 +5,7 @@ MOCKGEN?=mockgen
 
 .PHONY: all
 all: \
+  encoding/json/mock_json/all.go \
   io/mock_io/all.go \
   io/fs/mock_fs/all.go \
   net/mock_net/all.go \
@@ -18,8 +19,14 @@ all: \
   sync/mock_sync/all.go
 
 .PHONY: mockgen
-mockgen: 
+mockgen:
 	$(GO) install go.uber.org/mock/mockgen@latest
+
+# Package github.com/pdutton/encoding/json:
+
+.PHONY: encoding/json/mock_json/all.go
+encoding/json/mock_json/all.go:
+	$(MOCKGEN) -destination $@ -package mock_json github.com/pdutton/go-interfaces/encoding/json JSON,Decoder,Encoder
 
 # Package github.com/pdutton/io:
 
