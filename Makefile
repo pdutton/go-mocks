@@ -3,6 +3,7 @@
 GO?=go
 MOCKGEN?=mockgen
 
+.DEFAULT_GOAL: all
 .PHONY: all
 all: \
   encoding/json/mock_json/all.go \
