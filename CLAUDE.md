@@ -6,6 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This repository provides mock implementations for Go standard library interfaces and those from `github.com/pdutton/go-interfaces` using `go.uber.org/mock`. The mocks are auto-generated using `mockgen`.
 
+### General Rules
+- Always make changes in a branch, not in master
+
 ### Generating Mocks
 
 ```bash
