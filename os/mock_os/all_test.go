@@ -513,6 +513,108 @@ func TestMockProcess_Release(t *testing.T) {
 	testutil.AssertNil(t, err)
 }
 
+// TestMockProcessState_ExitCode tests retrieving the process exit code.
+func TestMockProcessState_ExitCode(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().ExitCode().Return(0)
+
+	testutil.AssertEqual(t, 0, mockState.ExitCode())
+}
+
+// TestMockProcessState_Exited tests checking whether the process has exited.
+func TestMockProcessState_Exited(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().Exited().Return(true)
+
+	testutil.AssertEqual(t, true, mockState.Exited())
+}
+
+// TestMockProcessState_Pid tests retrieving the process pid.
+func TestMockProcessState_Pid(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().Pid().Return(1234)
+
+	testutil.AssertEqual(t, 1234, mockState.Pid())
+}
+
+// TestMockProcessState_Success tests checking whether the process succeeded.
+func TestMockProcessState_Success(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().Success().Return(true)
+
+	testutil.AssertEqual(t, true, mockState.Success())
+}
+
+// TestMockProcessState_String tests the string representation.
+func TestMockProcessState_String(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().String().Return("exit status 0")
+
+	testutil.AssertEqual(t, "exit status 0", mockState.String())
+}
+
+// TestMockProcessState_SystemTime tests retrieving system CPU time.
+func TestMockProcessState_SystemTime(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().SystemTime().Return(time.Second)
+
+	testutil.AssertEqual(t, time.Second, mockState.SystemTime())
+}
+
+// TestMockProcessState_UserTime tests retrieving user CPU time.
+func TestMockProcessState_UserTime(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().UserTime().Return(2 * time.Second)
+
+	testutil.AssertEqual(t, 2*time.Second, mockState.UserTime())
+}
+
+// TestMockProcessState_Sys tests retrieving system-dependent exit info.
+func TestMockProcessState_Sys(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().Sys().Return(nil)
+
+	testutil.AssertNil(t, mockState.Sys())
+}
+
+// TestMockProcessState_SysUsage tests retrieving system resource usage info.
+func TestMockProcessState_SysUsage(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().SysUsage().Return(nil)
+
+	testutil.AssertNil(t, mockState.SysUsage())
+}
+
+// TestMockProcessState_Nub tests retrieving the underlying *os.ProcessState.
+func TestMockProcessState_Nub(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	mockState := NewMockProcessState(ctrl)
+
+	mockState.EXPECT().Nub().Return(nil)
+
+	if got := mockState.Nub(); got != nil {
+		t.Errorf("expected nil, got %v", got)
+	}
+}
+
 // TestMockOS_CreateOpenCloseSequence tests file lifecycle via OS.
 func TestMockOS_CreateOpenCloseSequence(t *testing.T) {
 	ctrl := gomock.NewController(t)
